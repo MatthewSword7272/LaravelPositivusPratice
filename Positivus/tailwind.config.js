@@ -15,10 +15,10 @@ export default {
             fontFamily: {
                 sans: ['"Space Grotesk"', ...defaultTheme.fontFamily.sans],
             },
-            color: {
+            colors: {
                 'lightGreen': '#B9FF66',
                 'black': '#191A23',
-                'grey' : '#F3F3F3',
+                'gray' : '#F3F3F3',
             }
         },
     },
