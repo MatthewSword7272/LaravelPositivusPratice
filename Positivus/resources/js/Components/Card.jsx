@@ -33,7 +33,7 @@ export default function Card({id, title, image}) {
                         </span>
                     ))}
                 </h2>
-                <div className={`${textColor[id]}`}>Learn More</div>
+                <div className={`${textColor[id]} hidden lg:block`}>Learn More</div>
             </div>
             <div className="w-1/2 flex justify-center">
                 <img src={image}></img>

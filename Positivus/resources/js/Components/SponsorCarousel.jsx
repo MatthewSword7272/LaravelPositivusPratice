@@ -15,19 +15,19 @@ export default function SponsorCarousel() {
     return (
        <>
             <div className="lg:flex justify-between w-full hidden">
-                {sponsorLogos.map((image) => (
-                    <img src={image} className="grayscale"></img>
+                {sponsorLogos.map((image, index) => (
+                    <img key={index} src={image} className="grayscale"></img>
                 ))}
             </div>
             <div className="flex flex-col lg:hidden w-full">
                 <div className="flex justify-evenly">
-                    {firstHalf.map((image) => (
-                        <img src={image} className="grayscale"></img>
+                    {firstHalf.map((image, index) => (
+                        <img key={index} src={image} className="grayscale"></img>
                     ))}
                 </div>
                 <div className="flex justify-evenly">
-                    {secondHalf.map((image) => (
-                        <img src={image} className="grayscale"></img>
+                    {secondHalf.map((image, index) => (
+                        <img key={index} src={image} className="grayscale"></img>
                     ))}
                 </div>
             </div>

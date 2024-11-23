@@ -12,10 +12,10 @@ export default function CardSection() {
     ];
 
     return (
-        <div className="grid grid-cols-2 mt-10 gap-10">
-            {cardsInfo.map((card) => (
+        <div className="grid lg:grid-cols-2 grid-cols-1 my-10 gap-10">
+            {cardsInfo.map((card, index) => (
                 // Passes Cards Title, Image and Id dor coloring
-                <Card title={card.title} image={card.image} id={card.id}/>
+                <Card key={index} title={card.title} image={card.image} id={card.id}/>
             ))}
         </div>
     )
