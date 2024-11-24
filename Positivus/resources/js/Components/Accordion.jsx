@@ -30,12 +30,15 @@ export default function Accordion({ number, title, content }) {
                     </button>
                 </div>
             </div>
-            {isOpen && (
-                <div className="transition translate-x-3">
-                    <Divider backgroundColor={"black"} /> {/* Line */}
-                    <div className="text-base font-normal">{content}</div>
-                </div>
-            )}
+
+            <div
+                className={`transition-all duration-700 ${
+                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                }`}
+            >
+                <Divider backgroundColor={"black"} /> {/* Line */}
+                <div className="text-base font-normal">{content}</div>
+            </div>
         </div>
     );
 }

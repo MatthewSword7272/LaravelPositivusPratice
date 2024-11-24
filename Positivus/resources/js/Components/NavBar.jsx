@@ -4,8 +4,7 @@ import StyledButton from "./StyledButton";
 import ThreeBars from "./ThreeBars";
 
 export default function NavBar() {
-
-    const [isOpen, setIsOpen] = useState(false);  //State for Opening and Closing Hamburger Menu
+    const [isOpen, setIsOpen] = useState(false); //State for Opening and Closing Hamburger Menu
 
     // Function for Open/Close Hamburger Menu
     const handleClick = () => {
@@ -17,10 +16,10 @@ export default function NavBar() {
             {/* Image Logo and Hamburger Icon (ThreeBars) */}
             <div className="lg:w-1/2 flex items-center justify-between">
                 <div>
-                    <img src="images/Logo_black.svg"/>
+                    <img src="images/Logo_black.svg" />
                 </div>
                 <button className="lg:hidden block" onClick={handleClick}>
-                    <ThreeBars/>
+                    <ThreeBars />
                 </button>
             </div>
             {/* Desktop Nav Bar Menu */}
@@ -34,7 +33,11 @@ export default function NavBar() {
                 />
             </nav>
             {/* Mobile Hamburger Menu */}
-            {isOpen && (
+            <div
+                className={`lg:hidden w-full overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                }`}
+            >
                 <div className="lg:hidden w-full">
                     <NavigationItems className="flex flex-col justify-center items-start space-y-6 my-4 underline" />
                     <StyledButton
@@ -42,7 +45,7 @@ export default function NavBar() {
                         buttonText={"Request a Quote"}
                     />
                 </div>
-            )}
+            </div>
         </div>
     );
 }
