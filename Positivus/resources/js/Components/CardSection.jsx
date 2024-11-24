@@ -2,6 +2,8 @@ import Card from "./Card";
 
 export default function CardSection() {
 
+    // Dummy Data fro Cards
+    //TODO: Get Card Info from database
     const cardsInfo = [
         {title: 'Search engine\noptimisation', image: '/images/card_image_1.svg', id: 1},
         {title: 'Pay-per-click\nadverting', image: '/images/card_image_2.svg', id: 2},

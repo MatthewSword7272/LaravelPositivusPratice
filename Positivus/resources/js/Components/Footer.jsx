@@ -10,13 +10,15 @@ export default function Footer() {
         <div className="bg-black rounded-none lg:rounded-tl-[50px] lg:rounded-tr-[50px] p-14 lg:mx-24 text-white mt-32">
             <div className="flex lg:flex-row flex-col items-center gap-4">
                 <WhiteLogo />
-                <NavigationItems className="flex flex-col lg:flex-row text-md xl:text-2xl justify-around items-center w-full gap-3 whitespace-nowrap" />
+                {/* Passes in CSS Classname */}
+                <NavigationItems className="underline flex flex-col lg:flex-row text-md xl:text-2xl justify-around items-center w-full gap-3 whitespace-nowrap" />
                 <SocialIcons />
             </div>
             <div className="flex flex-col lg:flex-row my-10 items-center space-y-10">
                 <ContactInfo />
                 <NewsletterSubscription />
             </div>
+            {/* Passes in background Colour */}
             <Divider backgroundColor={"white"} />
             <div className="flex items-start">
                 <span>&copy;2023 Positivus. All Rights Reserved.</span>

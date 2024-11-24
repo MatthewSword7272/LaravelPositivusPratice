@@ -2,6 +2,8 @@ import Accordion from "./Accordion"
 
 export default function AccordionSection() {
 
+    //Dummy data for Process
+    // TODO: Get this data from database
     const processSteps = [
     {
         number: "01",
@@ -28,6 +30,7 @@ export default function AccordionSection() {
     return (
         <div className="flex flex-col gap-y-7 my-10">
             {processSteps.map((card, index) => (
+                //Passes in fields from processSteps
                 <Accordion key={index} number={card.number} title={card.title} content={card.content}/>
             ))}
         </div>

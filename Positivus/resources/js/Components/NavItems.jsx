@@ -1,11 +1,12 @@
 export default function NavigationItems({ className }) {
-    const navItems = ["About us", "Services", "Use Cases", "Pricing", "Blog"];
+    //Gets CSS Classname
+    const navItems = ["About us", "Services", "Use Cases", "Pricing", "Blog"]; //Items for Navigation
 
     return (
-        <ul className={className}>
+        <div className={className}>
             {navItems.map((item, index) => (
-                <li key={index}>{item}</li>
+                <span key={index}>{item}</span>
             ))}
-        </ul>
+        </div>
     );
 }

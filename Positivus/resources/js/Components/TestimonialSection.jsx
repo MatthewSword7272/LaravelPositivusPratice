@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import SectionHeading from "./SectionHeading";
 
 export default function TestimonialSection() {
+    // settings for slider carousel
+    // TODO: Center Mode does not change at breakpoints, need to fix
     var settings = {
         dots: true,
         infinite: true,
@@ -34,6 +36,7 @@ export default function TestimonialSection() {
         ],
     };
 
+    // Function to customize Next Arrow
     function NextArrow(props) {
         const { className, style, onClick } = props;
         return (
@@ -45,6 +48,7 @@ export default function TestimonialSection() {
         );
     }
 
+    // Function to customize Previous Arrow
     function PrevArrow(props) {
         const { className, style, onClick } = props;
         return (
@@ -56,6 +60,8 @@ export default function TestimonialSection() {
         );
     }
 
+    // Dummy Data for Testimonials
+    // TODO: Get data from database
     const testimonials = [
         {
             quote: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
@@ -80,8 +86,9 @@ export default function TestimonialSection() {
                 Success through Our Case Studies
             </SectionHeading>
             <div className="bg-black rounded-3xl px-8 py-16">
-                <Slider {...settings} class>
+                <Slider {...settings}>
                     {testimonials.map((testimonial, index) => (
+                        // Testimonial: Passes in Testimonial data
                         <Testimonial key={index} testimonial={testimonial} />
                     ))}
                 </Slider>

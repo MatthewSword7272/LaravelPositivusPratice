@@ -1,4 +1,5 @@
 export default function Testimonial({ testimonial }) {
+    // Gets Testimonial Data
     return (
         <div className="text-white px-5">
             <div className=" border border-lightGreen p-12 rounded-3xl">
