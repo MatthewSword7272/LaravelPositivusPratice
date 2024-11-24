@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Divider from "./Divider";
 
 export default function Accordion({ number, title, content }) {
     const [isOpen, setIsOpen] = useState(false); //State used to open and close accordion
@@ -31,7 +32,7 @@ export default function Accordion({ number, title, content }) {
             </div>
             {isOpen && (
                 <div className="transition translate-x-3">
-                    <div className="bg-black h-[0.1rem] my-5" /> {/* Line */}
+                    <Divider backgroundColor={"black"} /> {/* Line */}
                     <div className="text-base font-normal">{content}</div>
                 </div>
             )}
