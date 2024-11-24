@@ -12,11 +12,13 @@ export default function Accordion({ number, title, content }) {
             onClick={() => setIsOpen(!isOpen)}
         >
             <div className="flex items-center justify-between">
-                <div className="flex items-center gap-x-5">
+                <div className="flex items-center gap-x-5 w-1/2">
                     <span className="text-5xl">{number}</span>
-                    <span className="text-2xl">{title}</span>
+                    <span className="lg:text-3xl sm:text-2xl text-sm">
+                        {title}
+                    </span>
                 </div>
-                <div>
+                <div className="">
                     <button className="bg-gray border border-black rounded-full w-full">
                         <img
                             className="w-full h-11 p-1"

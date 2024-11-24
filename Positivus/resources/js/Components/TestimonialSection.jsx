@@ -14,7 +14,6 @@ export default function TestimonialSection() {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        centerMode: true,
         centerPadding: "150px",
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
@@ -22,7 +21,6 @@ export default function TestimonialSection() {
             {
                 breakpoint: 1024, // This will apply to any screen larger than 1024px
                 settings: {
-                    centerMode: true,
                     centerPadding: "150px",
                 },
             },

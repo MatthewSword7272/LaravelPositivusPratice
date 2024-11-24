@@ -1,6 +1,6 @@
 export default function ContactInfo() {
     return (
-        <div className="w-[45%] space-y-5 text-center lg:text-left">
+        <div className="lg:w-[45%] space-y-5 text-center lg:text-left">
             <div>
                 <span className="bg-lightGreen text-black font-semibold rounded py-0.5 px-1 whitespace-nowrap">
                     Contact us:
