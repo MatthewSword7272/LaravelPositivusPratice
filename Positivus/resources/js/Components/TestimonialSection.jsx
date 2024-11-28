@@ -12,24 +12,25 @@ export default function TestimonialSection() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "290px",
         arrows: true,
-        centerPadding: "150px",
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
+        appendDots: (dots) => (
+            <div>
+                <ul style={{}}>{dots}</ul>
+            </div>
+        ),
+        customPaging: () => (
+            <div className="before:bg-blue-500 before:opacity-75 before:hover:opacity-100">
+                ●
+            </div>
+        ),
         responsive: [
             {
                 breakpoint: 1024, // This will apply to any screen larger than 1024px
-                settings: {
-                    centerPadding: "150px",
-                },
-            },
-            {
-                breakpoint: 9999,
-                settings: {
-                    centerMode: false,
-                    centerPadding: "50px",
-                },
+                settings: {},
             },
         ],
     };
@@ -42,7 +43,9 @@ export default function TestimonialSection() {
                 className={className}
                 style={{ ...style, top: "100%", right: "10rem", zIndex: "2" }}
                 onClick={onClick}
-            />
+            >
+                <img src="images/Arrow_right.svg"></img>
+            </div>
         );
     }
 
@@ -51,10 +54,12 @@ export default function TestimonialSection() {
         const { className, style, onClick } = props;
         return (
             <div
-                className={className}
+                className={`${className}`}
                 style={{ ...style, top: "100%", left: "10rem", zIndex: "2" }}
                 onClick={onClick}
-            />
+            >
+                <img src="images/Arrow_left.svg"></img>
+            </div>
         );
     }
 
@@ -83,7 +88,7 @@ export default function TestimonialSection() {
                 Explore Real-Life Examples of Our Proven Digital Marketing
                 Success through Our Case Studies
             </SectionHeading>
-            <div className="bg-black rounded-3xl px-8 py-16">
+            <div className="bg-black rounded-3xl pt-20 pb-18">
                 <Slider {...settings}>
                     {testimonials.map((testimonial, index) => (
                         // Testimonial: Passes in Testimonial data

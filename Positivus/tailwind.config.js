@@ -35,13 +35,19 @@ export default {
             padding: {
                 '9': '2.125rem',
                 '15': '3.75rem',
-                '25': '6.25rem'
+                '18': '4.375rem',
+                '25': '6.25rem',
+                '3.25rem': '3.75rem'
             },
             borderRadius: {
+                '4xl': '2.8125rem',
                 '5xl': '3rem'
             },
             borderWidth: {
                 '6': '6px'
+            },
+            margin: {
+                '34': '8.625rem'
             }
         },
     },

@@ -31,7 +31,7 @@ export default function AccordionSection() {
     ];
 
     return (
-        <div className="flex flex-col gap-y-7 mb-10">
+        <div className="flex flex-col gap-y-7 mb-36">
             {processSteps.map((card, index) => (
                 //Passes in fields from processSteps
                 <Accordion
