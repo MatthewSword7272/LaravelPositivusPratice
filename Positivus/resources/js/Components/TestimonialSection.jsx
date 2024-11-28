@@ -78,7 +78,7 @@ export default function TestimonialSection() {
         },
     ];
     return (
-        <div className="space-y-16">
+        <div className="">
             <SectionHeading title={"Testimonials"}>
                 Explore Real-Life Examples of Our Proven Digital Marketing
                 Success through Our Case Studies

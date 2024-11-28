@@ -7,11 +7,11 @@ export default function Header() {
         <div className="flex flex-col space-y-14">
             <NavBar /> {/* Nav Bar Component*/}
             <div className="flex justify-between items-center flex-col-reverse lg:flex-row">
-                <div className="flex flex-col justify-center space-y-10 lg:w-[40%] w-full text-black">
-                    <h1 className="lg:text-7xl text-5xl font-medium">
+                <div className="flex flex-col justify-center space-y-10 lg:w-[45%] w-full text-black">
+                    <h1 className="lg:text-h1 text-h1-mobile font-medium">
                         Navigating the digital landscape for success
                     </h1>
-                    <div className="text-lg">
+                    <div className="text-h4">
                         Our digital marketing agency helps businesses grow and
                         succeed online through a range of services including
                         SEO, PPC, social media marketing, and content creation.

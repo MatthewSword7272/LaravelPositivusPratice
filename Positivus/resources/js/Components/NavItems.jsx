@@ -5,7 +5,9 @@ export default function NavigationItems({ className }) {
     return (
         <div className={className}>
             {navItems.map((item, index) => (
-                <span key={index}>{item}</span>
+                <span className="text-h4" key={index}>
+                    {item}
+                </span>
             ))}
         </div>
     );

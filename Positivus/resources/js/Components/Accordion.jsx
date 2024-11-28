@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Divider from "./Divider";
+import MinusImage from "@/svgs/MinusImage";
+import PlusImage from "@/svgs/PlusImage";
 
 export default function Accordion({ number, title, content }) {
     const [isOpen, setIsOpen] = useState(false); //State used to open and close accordion
@@ -8,26 +10,17 @@ export default function Accordion({ number, title, content }) {
 
     return (
         <div
-            className={`font-semibold rounded-[70px] lg:rounded-[50px] border border-black p-10 border-b-[6px] ${bgColour} transition ease-in-out hover:cursor-pointer`}
+            className={`font-semibold border border-black px-15 py-10 border-b-6 rounded-5xl ${bgColour} transition ease-in-out hover:cursor-pointer`}
             onClick={() => setIsOpen(!isOpen)}
         >
             <div className="flex items-center justify-between">
-                <div className="flex items-center gap-x-5 w-1/2">
-                    <span className="text-5xl">{number}</span>
-                    <span className="lg:text-3xl sm:text-2xl text-sm">
-                        {title}
-                    </span>
+                <div className="flex items-center gap-x-5">
+                    <span className="text-h1">{number}</span>
+                    <span className="text-h3 ">{title}</span>
                 </div>
                 <div className="">
-                    <button className="bg-gray border border-black rounded-full w-full">
-                        <img
-                            className="w-full h-11 p-1"
-                            src={`${
-                                !isOpen
-                                    ? "/images/plus.svg"
-                                    : "/images/minus.svg"
-                            }`}
-                        ></img>{" "}
+                    <button>
+                        {!isOpen ? <MinusImage /> : <PlusImage />}
                         {/*Switches image if accordion is opened or closed*/}
                     </button>
                 </div>
@@ -39,7 +32,7 @@ export default function Accordion({ number, title, content }) {
                 }`}
             >
                 <Divider backgroundColor={"black"} /> {/* Line */}
-                <div className="text-base font-normal">{content}</div>
+                <div className="text-p font-normal">{content}</div>
             </div>
         </div>
     );
