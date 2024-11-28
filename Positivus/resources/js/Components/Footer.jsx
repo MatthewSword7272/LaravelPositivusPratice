@@ -8,13 +8,13 @@ import WhiteLogo from "./WhiteLogo";
 export default function Footer() {
     return (
         <div className="bg-black rounded-none lg:rounded-tl-[50px] lg:rounded-tr-[50px] p-14 lg:mx-24 text-white mt-32">
-            <div className="flex lg:flex-row flex-col items-center gap-4">
+            <div className="flex lg:flex-row flex-col items-center">
                 <WhiteLogo />
                 {/* Passes in CSS Classname */}
-                <NavigationItems className="underline flex flex-col lg:flex-row text-md xl:text-2xl justify-around items-center w-full gap-3 whitespace-nowrap" />
+                <NavigationItems className="underline flex flex-col lg:flex-row text-md xl:text-2xl justify-center items-center w-full gap-10 whitespace-nowrap" />
                 <SocialIcons />
             </div>
-            <div className="flex flex-col lg:flex-row my-10 items-center space-y-10">
+            <div className="flex flex-col lg:flex-row my-10 items-center justify-between gap-36">
                 <ContactInfo />
                 <NewsletterSubscription />
             </div>

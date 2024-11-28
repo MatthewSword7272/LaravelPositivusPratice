@@ -1,8 +1,8 @@
 export default function ContactInfo() {
     return (
-        <div className="lg:w-[45%] space-y-5 text-center lg:text-left">
+        <div className="w-[55%] space-y-5 text-center lg:text-left text-p">
             <div>
-                <span className="bg-lightGreen text-black font-semibold rounded py-0.5 px-1 whitespace-nowrap">
+                <span className="bg-lightGreen text-black font-semibold rounded px-1 whitespace-nowrap text-h4">
                     Contact us:
                 </span>
             </div>
