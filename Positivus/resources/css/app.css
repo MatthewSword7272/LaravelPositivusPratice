@@ -2,22 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.slick-prev::before {
-    content: none;
-}
-
-.slick-next::before {
-    content: none;
-}
-
-input[type="radio"] {
+/* input[type="radio"] {
     border: black solid 1px;
     width: 28px;
     height: 28px;
     cursor: pointer;
-    /* color: white; */
+     color: white;
 
-    /* checked:bg-lightGreen checked:bg-none w-7 h-7 focus:bg-none hover:bg-none hover:cursor */
+    checked:bg-lightGreen checked:bg-none w-7 h-7 focus:bg-none hover:bg-none hover:cursor
 }
 
 input[type="radio"]:checked {
@@ -29,13 +21,35 @@ input[type="radio"]:focus {
     --tw-ring-color: black;
     border: black solid 1px;
 }
-
-/* input[type="radio"]:checked:hover {
-    --tw-ring-color: black;
-    border: black solid 1px;
+*/
+.customRadioButton {
+    @apply border border-black h-7 w-7
+        checked:border-black
+        checked:bg-checkedRadioButton
+        checked:bg-white
+        cursor-pointer
+        focus:bg-white
+        checked:focus:bg-white;
 }
 
-input[type="radio"]:checked:focus:hover {
-    --tw-ring-color: black;
-    border: black solid 1px;
-} */
+.slick-prev:before,
+.slick-next:before {
+    content: "" !important;
+}
+
+.slick-dots {
+    bottom: -10px !important;
+
+    li.slick-active button:before,
+    li button:before {
+        color: white !important;
+        background-image: url("/images/CustomDot.svg");
+        background-repeat: no-repeat;
+        content: "" !important;
+        opacity: 1 !important;
+    }
+}
+
+.slick-dots li.slick-active button:before {
+    background-image: url("/images/CustomActiveDot.svg");
+}

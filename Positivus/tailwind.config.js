@@ -48,6 +48,9 @@ export default {
             },
             margin: {
                 '34': '8.625rem'
+            },
+            backgroundImage: {
+                checkedRadioButton: 'url("images/checkedDot.svg")'
             }
         },
     },

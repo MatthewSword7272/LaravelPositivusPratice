@@ -17,16 +17,6 @@ export default function TestimonialSection() {
         arrows: true,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        appendDots: (dots) => (
-            <div>
-                <ul style={{}}>{dots}</ul>
-            </div>
-        ),
-        customPaging: () => (
-            <div className="before:bg-blue-500 before:opacity-75 before:hover:opacity-100">
-                ●
-            </div>
-        ),
         responsive: [
             {
                 breakpoint: 1024, // This will apply to any screen larger than 1024px
@@ -39,13 +29,18 @@ export default function TestimonialSection() {
     function NextArrow(props) {
         const { className, style, onClick } = props;
         return (
-            <div
+            <button
                 className={className}
-                style={{ ...style, top: "100%", right: "10rem", zIndex: "2" }}
+                style={{
+                    ...style,
+                    top: "100%",
+                    right: "20rem",
+                    zIndex: "2",
+                }}
                 onClick={onClick}
             >
                 <img src="images/Arrow_right.svg"></img>
-            </div>
+            </button>
         );
     }
 
@@ -53,13 +48,13 @@ export default function TestimonialSection() {
     function PrevArrow(props) {
         const { className, style, onClick } = props;
         return (
-            <div
-                className={`${className}`}
-                style={{ ...style, top: "100%", left: "10rem", zIndex: "2" }}
+            <button
+                className={className}
+                style={{ ...style, top: "100%", left: "20rem", zIndex: "2" }}
                 onClick={onClick}
             >
                 <img src="images/Arrow_left.svg"></img>
-            </div>
+            </button>
         );
     }
 
