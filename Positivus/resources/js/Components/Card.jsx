@@ -1,45 +1,47 @@
+import LearnMoreBlack from "@/svgs/LearnMoreBlack";
+import LearnMoreWhite from "@/svgs/LearnMoreWhite";
+
 export default function Card({ id, title, image }) {
     //Card Compoent gets card title and image. Also uses Id to determine the colours for the card
 
-    //Define Background colour based on id
-    const bgColor = {
-        1: "bg-gray", // Gray for id 1
-        2: "bg-lightGreen", // Light Green for id 2
-        3: "bg-black", // Black for id 3
-    };
-
-    // Define highlight text colors based on id
-    const highlightColor = {
-        1: "bg-lightGreen", // Light Green for id 1
-        2: "bg-white", // Black for id 2
-        3: "bg-white", // Black for id 3
-    };
-
-    // Define text colors based on id
-    const textColor = {
-        1: "text-black", // Light Green for id 1
-        2: "text-black", // Black for id 2
-        3: "text-white", // Black for id 3
-    };
+    const cards = [
+        {
+            id: 1,
+            bgColor: "bg-gray",
+            highlightColor: "bg-lightGreen",
+            link: <LearnMoreBlack />,
+        },
+        {
+            id: 2,
+            bgColor: "bg-lightGreen",
+            highlightColor: "bg-white",
+            link: <LearnMoreBlack />,
+        },
+        {
+            id: 3,
+            bgColor: "bg-black",
+            highlightColor: "bg-white",
+            link: <LearnMoreWhite />,
+        },
+    ];
+    const currentCard = cards.find((card) => card.id === id);
 
     return (
         <div
-            className={`${bgColor[id]} h-72 rounded-[50px] border border-black p-10 flex justify-between border-b-[6px]`}
+            className={`${currentCard.bgColor} h-72 rounded-[50px] border border-black p-10 flex justify-between border-b-[6px]`}
         >
             <div className="w-1/2 flex justify-between flex-col">
                 <h2 className="inline-flex flex-col">
                     {title.split("\n").map((word, index) => (
                         <span
                             key={index}
-                            className={`${highlightColor[id]} text-h3 font-bold w-fit rounded py-0.5 px-1`}
+                            className={`${currentCard.highlightColor} text-h3 font-bold w-fit rounded py-0.5 px-1`}
                         >
                             {word}
                         </span>
                     ))}
                 </h2>
-                <div className={`${textColor[id]} hidden lg:block`}>
-                    Learn More
-                </div>
+                <div className={`hidden lg:block`}>{currentCard.link}</div>
             </div>
             <div className="w-1/2 flex justify-center">
                 <img src={image}></img>

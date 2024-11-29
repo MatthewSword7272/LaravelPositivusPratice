@@ -83,19 +83,13 @@ export default function TestimonialSection() {
         },
     ];
     return (
-        <div className="">
-            <SectionHeading title={"Testimonials"}>
-                Explore Real-Life Examples of Our Proven Digital Marketing
-                Success through Our Case Studies
-            </SectionHeading>
-            <div className="bg-black rounded-3xl pt-20 pb-18">
-                <Slider {...settings}>
-                    {testimonials.map((testimonial, index) => (
-                        // Testimonial: Passes in Testimonial data
-                        <Testimonial key={index} testimonial={testimonial} />
-                    ))}
-                </Slider>
-            </div>
+        <div className="bg-black rounded-3xl pt-20 pb-18 mb-36">
+            <Slider {...settings}>
+                {testimonials.map((testimonial, index) => (
+                    // Testimonial: Passes in Testimonial data
+                    <Testimonial key={index} testimonial={testimonial} />
+                ))}
+            </Slider>
         </div>
     );
 }

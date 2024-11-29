@@ -1,6 +1,7 @@
 import AccordionSection from "@/Components/AccordionSection";
 import CardSection from "@/Components/CardSection";
 import CaseStudies from "@/Components/CaseStudies";
+import ContactUs from "@/Components/ContactUs";
 import SectionHeading from "@/Components/SectionHeading";
 import Team from "@/Components/Team";
 import TestimonialSection from "@/Components/TestimonialSection";
@@ -41,7 +42,16 @@ export default function Welcome({}) {
 
             <AccordionSection />
 
+            <SectionHeading title={"Testimonials"}>
+                Explore Real-Life Examples of Our Proven Digital Marketing
+                Success through Our Case Studies
+            </SectionHeading>
             <TestimonialSection />
+
+            <SectionHeading title={"Contact Us"}>
+                Connect with Us: Let's Discuss Your Digital Marketing Needs
+            </SectionHeading>
+            <ContactUs />
         </AppLayout>
     );
 }

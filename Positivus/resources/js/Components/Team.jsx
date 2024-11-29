@@ -1,7 +1,7 @@
 import Divider from "./Divider";
 import Portrait from "./Portrait";
 
-export default function Team(params) {
+export default function Team() {
     const teamMembers = [
         {
             name: "John Smith",
@@ -51,14 +51,24 @@ export default function Team(params) {
         <div className="grid grid-cols-3 gap-10 mb-52">
             {teamMembers.map((member) => (
                 <div className="border border-black border-b-6 rounded-4xl py-10 px-9">
-                    <div className="flex items-end gap-x-5">
+                    <div className="flex gap-x-5">
                         {/* <Portrait image={member.image} /> */}
                         <img src={member.image}></img>
-                        <div className="flex flex-col">
-                            <span className="text-h4 font-bold">
-                                {member.name}
-                            </span>
-                            <span className="text-p">{member.position}</span>
+                        <div className="flex flex-col justify-between w-full">
+                            <button className="flex justify-end">
+                                <img
+                                    src="/images/GreenLinkDin.svg"
+                                    className="w-fit"
+                                ></img>
+                            </button>
+                            <div className="flex flex-col">
+                                <span className="text-h4 font-bold">
+                                    {member.name}
+                                </span>
+                                <span className="text-p">
+                                    {member.position}
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <Divider backgroundColor={"black"} />

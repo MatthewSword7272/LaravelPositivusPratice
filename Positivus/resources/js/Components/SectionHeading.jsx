@@ -5,7 +5,9 @@ export default function SectionHeading({ title, children }) {
             <h2 className="bg-lightGreen text-4xl font-semibold rounded py-0.5 px-1 lg:text-left text-center lg:whitespace-nowrap">
                 {title}
             </h2>
-            <span className="text-center lg:text-start w-1/2">{children}</span>
+            <span className="text-center lg:text-start w-1/2 text-p">
+                {children}
+            </span>
         </div>
     );
 }

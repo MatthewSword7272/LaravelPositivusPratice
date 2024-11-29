@@ -9,3 +9,33 @@
 .slick-next::before {
     content: none;
 }
+
+input[type="radio"] {
+    border: black solid 1px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    /* color: white; */
+
+    /* checked:bg-lightGreen checked:bg-none w-7 h-7 focus:bg-none hover:bg-none hover:cursor */
+}
+
+input[type="radio"]:checked {
+    border: black solid 1px;
+    background-image: url("images/checkedDot.svg");
+}
+
+input[type="radio"]:focus {
+    --tw-ring-color: black;
+    border: black solid 1px;
+}
+
+/* input[type="radio"]:checked:hover {
+    --tw-ring-color: black;
+    border: black solid 1px;
+}
+
+input[type="radio"]:checked:focus:hover {
+    --tw-ring-color: black;
+    border: black solid 1px;
+} */
