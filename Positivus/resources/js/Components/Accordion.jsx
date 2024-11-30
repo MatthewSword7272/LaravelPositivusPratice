@@ -15,12 +15,16 @@ export default function Accordion({ number, title, content }) {
         >
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-x-5">
-                    <span className="text-h1">{number}</span>
-                    <span className="text-h3 ">{title}</span>
+                    <span className="lg:text-h1 text-h3">{number}</span>
+                    <span className="lg:text-h3 text-h4-mobile">{title}</span>
                 </div>
                 <div className="">
                     <button>
-                        {!isOpen ? <MinusImage /> : <PlusImage />}
+                        {!isOpen ? (
+                            <MinusImage className="h-5 w-5" />
+                        ) : (
+                            <PlusImage className="h-5 w-5" />
+                        )}
                         {/*Switches image if accordion is opened or closed*/}
                     </button>
                 </div>
@@ -28,10 +32,11 @@ export default function Accordion({ number, title, content }) {
 
             <div
                 className={`transition-all duration-700 ${
-                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    isOpen ? "max-h-96 block" : "max-h-0 hidden"
                 }`}
             >
-                <Divider backgroundColor={"black"} /> {/* Line */}
+                <Divider backgroundColor={"bg-black"} />
+                {/* Line */}
                 <div className="text-p font-normal">{content}</div>
             </div>
         </div>

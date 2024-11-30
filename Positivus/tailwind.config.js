@@ -33,7 +33,11 @@ export default {
                 'p-mobile': ['1rem', 'normal'],
             },
             padding: {
+                '5.5': '1.125rem',
+                '7.5': '1.875rem',
                 '9': '2.125rem',
+                '10.5': '2.625rem',
+                '13': '3.125rem',
                 '15': '3.75rem',
                 '18': '4.375rem',
                 '25': '6.25rem',
@@ -44,9 +48,10 @@ export default {
                 '5xl': '3rem'
             },
             borderWidth: {
-                '6': '6px'
+                '6': '0.375rem'
             },
             margin: {
+                '15': '3.125rem',
                 '34': '8.625rem'
             },
             backgroundImage: {

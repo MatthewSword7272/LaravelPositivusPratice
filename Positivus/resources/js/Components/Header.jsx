@@ -11,7 +11,10 @@ export default function Header() {
                     <h1 className="lg:text-h1 text-h1-mobile font-medium">
                         Navigating the digital landscape for success
                     </h1>
-                    <div className="text-h4">
+                    <div className="flex justify-center w-auto lg:hidden">
+                        <img src="images/HeaderImage.svg" />
+                    </div>
+                    <div className="lg:text-h4 text-p-mobile">
                         Our digital marketing agency helps businesses grow and
                         succeed online through a range of services including
                         SEO, PPC, social media marketing, and content creation.
@@ -24,7 +27,7 @@ export default function Header() {
                         />
                     </div>
                 </div>
-                <div className="flex justify-center lg:w-1/2 w-auto">
+                <div className="hidden justify-center w-1/2 lg:flex">
                     <img src="images/HeaderImage.svg" />
                 </div>
             </div>

@@ -19,7 +19,7 @@ export default function Footer() {
                 <NewsletterSubscription />
             </div>
             {/* Passes in background Colour */}
-            <Divider backgroundColor={"white"} />
+            <Divider backgroundColor={"bg-white"} />
             <div className="flex items-start">
                 <span>&copy;2023 Positivus. All Rights Reserved.</span>
             </div>

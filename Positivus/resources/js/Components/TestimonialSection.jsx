@@ -2,7 +2,6 @@ import Slider from "react-slick";
 import Testimonial from "./Testimonial";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SectionHeading from "./SectionHeading";
 
 export default function TestimonialSection() {
     // settings for slider carousel
@@ -19,8 +18,10 @@ export default function TestimonialSection() {
         prevArrow: <PrevArrow />,
         responsive: [
             {
-                breakpoint: 1024, // This will apply to any screen larger than 1024px
-                settings: {},
+                breakpoint: 1230,
+                settings: {
+                    centerMode: false,
+                },
             },
         ],
     };
@@ -61,6 +62,16 @@ export default function TestimonialSection() {
     // Dummy Data for Testimonials
     // TODO: Get data from database
     const testimonials = [
+        {
+            quote: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
+            name: "John Smith",
+            position: "Marketing Director at XYZ Corp",
+        },
+        {
+            quote: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
+            name: "John Smith",
+            position: "Marketing Director at XYZ Corp",
+        },
         {
             quote: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
             name: "John Smith",

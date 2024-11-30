@@ -4,8 +4,8 @@ import StyledButton from "./StyledButton";
 export default function ThingsHappen() {
     return (
         <div className="flex">
-            <div className="mt-6 mb-40 bg-gray flex justify-between p-15 rounded-5xl items-center w-full">
-                <div className="space-y-7 w-1/2">
+            <div className="mt-6 mb-40 bg-gray flex justify-between py-15 lg:px-15 px-13 rounded-5xl items-center w-full">
+                <div className="space-y-7 w-full lg:w-1/2">
                     <h3 className="text-h3 font-bold">
                         Let's make things happen
                     </h3>

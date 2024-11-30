@@ -35,7 +35,7 @@ export default function Card({ id, title, image }) {
                     {title.split("\n").map((word, index) => (
                         <span
                             key={index}
-                            className={`${currentCard.highlightColor} text-h3 font-bold w-fit rounded py-0.5 px-1`}
+                            className={`${currentCard.highlightColor} lg:text-h3 text-h3-mobile font-bold w-fit rounded py-0.5 px-1`}
                         >
                             {word}
                         </span>

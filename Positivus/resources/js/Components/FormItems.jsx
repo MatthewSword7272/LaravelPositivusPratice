@@ -33,7 +33,7 @@ export default function FormItems() {
                         required
                         placeholder={"Name"}
                         onChange={handleNameChange}
-                        className="rounded-xl border-black px-8 py-5 mt-1"
+                        className="formField h-14"
                     ></input>
                 </div>
                 {/* Email */}
@@ -48,7 +48,7 @@ export default function FormItems() {
                         required
                         placeholder={"Email"}
                         onChange={handleEmailChange}
-                        className="rounded-xl border-black px-8 py-5 mt-1"
+                        className="formField h-14"
                     ></input>
                 </div>
                 {/* Message */}
@@ -62,7 +62,7 @@ export default function FormItems() {
                         required
                         onChange={handleMessageChange}
                         placeholder={"Message"}
-                        className="rounded-xl border-black px-8 py-5 h-48 mt-1"
+                        className="formField h-48"
                     ></textarea>
                 </div>
                 <button className="text-xl bg-black text-white w-full py-5 rounded-xl">

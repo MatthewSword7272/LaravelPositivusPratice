@@ -2,26 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* input[type="radio"] {
-    border: black solid 1px;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-     color: white;
-
-    checked:bg-lightGreen checked:bg-none w-7 h-7 focus:bg-none hover:bg-none hover:cursor
-}
-
-input[type="radio"]:checked {
-    border: black solid 1px;
-    background-image: url("images/checkedDot.svg");
-}
-
-input[type="radio"]:focus {
-    --tw-ring-color: black;
-    border: black solid 1px;
-}
-*/
 .customRadioButton {
     @apply border border-black h-7 w-7
         checked:border-black
@@ -32,13 +12,17 @@ input[type="radio"]:focus {
         checked:focus:bg-white;
 }
 
+.formField {
+    @apply rounded-xl border-black px-7.5 py-5.5 mt-1;
+}
+
 .slick-prev:before,
 .slick-next:before {
     content: "" !important;
 }
 
 .slick-dots {
-    bottom: -10px !important;
+    bottom: -15px !important;
 
     li.slick-active button:before,
     li button:before {
@@ -52,4 +36,16 @@ input[type="radio"]:focus {
 
 .slick-dots li.slick-active button:before {
     background-image: url("/images/CustomActiveDot.svg");
+}
+
+.accordionIcon {
+    max-width: 3.625rem;
+    max-height: 3.625rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .accordionIcon {
+        width: 1.875rem;
+        height: 1.875rem;
+    }
 }

@@ -48,12 +48,15 @@ export default function Team() {
     ];
 
     return (
-        <div className="grid grid-cols-3 gap-10 mb-52">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-10 mb-52">
             {teamMembers.map((member) => (
                 <div className="border border-black border-b-6 rounded-4xl py-10 px-9">
-                    <div className="flex gap-x-5">
+                    <div className="flex gap-x-5 items-stretch">
                         {/* <Portrait image={member.image} /> */}
-                        <img src={member.image}></img>
+                        <img
+                            src={member.image}
+                            className=" object-contain"
+                        ></img>
                         <div className="flex flex-col justify-between w-full">
                             <button className="flex justify-end">
                                 <img
@@ -62,17 +65,19 @@ export default function Team() {
                                 ></img>
                             </button>
                             <div className="flex flex-col">
-                                <span className="text-h4 font-bold">
+                                <span className="lg:text-h4 text-h4-mobile font-bold">
                                     {member.name}
                                 </span>
-                                <span className="text-p">
+                                <span className="lg:text-p text-p-mobile">
                                     {member.position}
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <Divider backgroundColor={"black"} />
-                    <div className="text-p">{member.description}</div>
+                    <Divider backgroundColor={"bg-black"} />
+                    <div className="lg:text-p text-p-mobile">
+                        {member.description}
+                    </div>
                 </div>
             ))}
         </div>
