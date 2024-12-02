@@ -9,16 +9,23 @@
         checked:bg-white
         cursor-pointer
         focus:bg-white
-        checked:focus:bg-white;
+        checked:focus:bg-white
+        checked:hover:bg-white
+        checked:hover:border-black;
 }
 
 .formField {
     @apply rounded-xl border-black px-7.5 py-5.5 mt-1;
 }
 
-.slick-prev:before,
-.slick-next:before {
-    content: "" !important;
+.slick-prev,
+.slick-next {
+    z-index: 2;
+    top: 100% !important;
+
+    &::before {
+        content: "" !important;
+    }
 }
 
 .slick-dots {

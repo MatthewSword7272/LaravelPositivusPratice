@@ -34,6 +34,7 @@ export default {
             },
             padding: {
                 '5.5': '1.125rem',
+                '2.5': '0.625rem',
                 '7.5': '1.875rem',
                 '9': '2.125rem',
                 '10.5': '2.625rem',
@@ -56,6 +57,12 @@ export default {
             },
             backgroundImage: {
                 checkedRadioButton: 'url("images/checkedDot.svg")'
+            },
+            gap: {
+                '15': '3.75rem'
+            },
+            height: {
+                '75': '19.375rem'
             }
         },
     },

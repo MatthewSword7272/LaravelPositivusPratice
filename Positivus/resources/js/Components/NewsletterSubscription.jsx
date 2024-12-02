@@ -7,7 +7,11 @@ export default function NewsletterSubscription() {
                 placeholder="Email"
                 className="bg-[#292A32] text-white rounded-xl p-5 lg:w-1/2 w-full"
             />
-            <StyledButton bgColour="#b9ff66" buttonText="Subscribe to news" />
+            <StyledButton
+                bgColour="bg-lightGreen"
+                textColour="text-black"
+                buttonText="Subscribe to news"
+            />
         </div>
     );
 }

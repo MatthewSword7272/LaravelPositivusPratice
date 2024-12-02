@@ -18,7 +18,7 @@ export default function TestimonialSection() {
         prevArrow: <PrevArrow />,
         responsive: [
             {
-                breakpoint: 1230,
+                breakpoint: 1300,
                 settings: {
                     centerMode: false,
                 },
@@ -32,12 +32,7 @@ export default function TestimonialSection() {
         return (
             <button
                 className={className}
-                style={{
-                    ...style,
-                    top: "100%",
-                    right: "20rem",
-                    zIndex: "2",
-                }}
+                style={{ ...style, right: "15%" }}
                 onClick={onClick}
             >
                 <img src="images/Arrow_right.svg"></img>
@@ -51,7 +46,7 @@ export default function TestimonialSection() {
         return (
             <button
                 className={className}
-                style={{ ...style, top: "100%", left: "20rem", zIndex: "2" }}
+                style={{ ...style, left: "15%" }}
                 onClick={onClick}
             >
                 <img src="images/Arrow_left.svg"></img>
@@ -89,13 +84,15 @@ export default function TestimonialSection() {
         },
     ];
     return (
-        <div className="bg-black rounded-3xl pt-20 pb-18 mb-36">
-            <Slider {...settings}>
-                {testimonials.map((testimonial, index) => (
-                    // Testimonial: Passes in Testimonial data
-                    <Testimonial key={index} testimonial={testimonial} />
-                ))}
-            </Slider>
+        <div className="xl:flex xl:justify-center">
+            <div className="bg-black max-w-7xl rounded-4xl pt-20 pb-18 mb-36">
+                <Slider {...settings}>
+                    {testimonials.map((testimonial, index) => (
+                        // Testimonial: Passes in Testimonial data
+                        <Testimonial key={index} testimonial={testimonial} />
+                    ))}
+                </Slider>
+            </div>
         </div>
     );
 }

@@ -1,27 +1,15 @@
 import FormItems from "./FormItems";
+import ContactUsRadioButtons from "./ContactUsRadioButtons";
 
 export default function ContactUs() {
-    const form = [
-        {
-            title: "Name",
-            id: "name",
-        },
-        {
-            title: "Email",
-            id: "name",
-        },
-        {
-            title: "Name",
-            id: "name",
-        },
-    ];
     return (
-        <div className="bg-gray flex rounded-5xl w-full pl-25 pt-15 pb-20 justify-between">
-            <form className="flex flex-col w-1/2">
+        <div className="bg-gray flex rounded-4xl w-full lg:pl-25 lg:pt-15 lg:pb-20 lg:pr-0 px-7.5 py-10 justify-between gap-x-5">
+            <form className="flex flex-col lg:w-1/2 w-full">
+                <ContactUsRadioButtons />
                 <FormItems />
             </form>
 
-            <div>
+            <div className="hidden lg:block">
                 <img src="/images/contactUsImage.png" className=""></img>
             </div>
         </div>

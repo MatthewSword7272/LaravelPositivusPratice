@@ -20,9 +20,13 @@ export default function CaseStudies() {
         centerPadding: "20px",
     };
 
+    const cardClassName = "bg-black text-white rounded-4xl";
+
     return (
         <div>
-            <div className="bg-black py-18 px-15 lg:flex text-white rounded-5xl mb-36 gap-32 hidden">
+            <div
+                className={`${cardClassName} py-18 px-15 lg:flex mb-36 gap-32 hidden`}
+            >
                 {caseStudies.map((caseStudy, index) => (
                     <div key={index} className="flex w-1/3">
                         <div className="flex flex-col space-y-5">
@@ -40,7 +44,9 @@ export default function CaseStudies() {
                 <Slider {...settings}>
                     {caseStudies.map((caseStudy, index) => (
                         <div key={index} className="mb-36">
-                            <div className="space-y-10 mx-2 py-10.5 px-13 h-60 rounded-5xl bg-black text-white">
+                            <div
+                                className={`${cardClassName} space-y-10 mx-2 py-10.5 px-13 lg:h-60`}
+                            >
                                 <div className="text-p-mobile">{caseStudy}</div>
                                 <LearnMoreSimpleGreen />
                             </div>

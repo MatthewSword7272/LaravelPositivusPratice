@@ -28,7 +28,8 @@ export default function NavBar() {
                 <NavigationItems className="flex justify-evenly w-full items-center" />
                 {/* Passing Background colour and Text */}
                 <StyledButton
-                    bgColour={"white"}
+                    bgColour={"bg-white"}
+                    textColour="text-black"
                     buttonText={"Request a Quote"}
                 />
             </nav>

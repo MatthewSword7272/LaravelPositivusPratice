@@ -1,11 +1,11 @@
-export default function RadioButtons() {
+export default function ContactUsRadioButtons() {
     const radioButtons = [
         { name: "Say Hi", value: "say-hi" },
         { name: "Get A Quote", value: "get-quote" },
     ];
 
     return (
-        <div className="flex mb-10 items-center gap-9">
+        <div className="flex lg:mb-10 mb-9 lg:gap-9 gap-15 justify-center lg:justify-start">
             {radioButtons.map((radioButton) => (
                 <div className="flex items-center cursor-pointer">
                     <input
