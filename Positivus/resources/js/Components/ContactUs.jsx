@@ -1,5 +1,5 @@
-import FormItems from "./FormItems";
-import ContactUsRadioButtons from "./ContactUsRadioButtons";
+import FormItems from './FormItems'
+import ContactUsRadioButtons from './ContactUsRadioButtons'
 
 export default function ContactUs() {
     return (
@@ -13,5 +13,5 @@ export default function ContactUs() {
                 <img src="/images/contactUsImage.png" className=""></img>
             </div>
         </div>
-    );
+    )
 }

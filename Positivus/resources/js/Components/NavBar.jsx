@@ -1,15 +1,15 @@
-import { useState } from "react";
-import NavigationItems from "./NavItems";
-import StyledButton from "./StyledButton";
-import ThreeBars from "./ThreeBars";
+import {useState} from 'react'
+import NavigationItems from './NavItems'
+import StyledButton from './StyledButton'
+import ThreeBars from './ThreeBars'
 
 export default function NavBar() {
-    const [isOpen, setIsOpen] = useState(false); //State for Opening and Closing Hamburger Menu
+    const [isOpen, setIsOpen] = useState(false) //State for Opening and Closing Hamburger Menu
 
     // Function for Open/Close Hamburger Menu
     const handleClick = () => {
-        setIsOpen(!isOpen);
-    };
+        setIsOpen(!isOpen)
+    }
 
     return (
         <div className="flex lg:px-0 px-5 lg:flex-row flex-col">
@@ -27,26 +27,19 @@ export default function NavBar() {
                 {/* Passing in Class Names */}
                 <NavigationItems className="flex justify-evenly w-full items-center" />
                 {/* Passing Background colour and Text */}
-                <StyledButton
-                    bgColour={"bg-white"}
-                    textColour="text-black"
-                    buttonText={"Request a Quote"}
-                />
+                <StyledButton bgColour={'bg-white'} textColour="text-black" buttonText={'Request a Quote'} />
             </nav>
             {/* Mobile Hamburger Menu */}
             <div
                 className={`lg:hidden w-full overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
             >
                 <div className="lg:hidden w-full">
                     <NavigationItems className="flex flex-col justify-center items-start space-y-6 my-4 underline" />
-                    <StyledButton
-                        bgColour={"white"}
-                        buttonText={"Request a Quote"}
-                    />
+                    <StyledButton bgColour={'white'} buttonText={'Request a Quote'} />
                 </div>
             </div>
         </div>
-    );
+    )
 }

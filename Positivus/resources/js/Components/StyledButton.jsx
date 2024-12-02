@@ -1,8 +1,4 @@
-export default function StyledButton({
-    buttonText,
-    bgColour = "bg-black",
-    textColour = "bg-black",
-}) {
+export default function StyledButton({buttonText, bgColour = 'bg-black', textColour = 'bg-black'}) {
     // Styled Button, gets button text. Background Colour and Text Colour are black by default
     //Overrides are needed for colour change
     return (
@@ -11,5 +7,5 @@ export default function StyledButton({
         >
             {buttonText}
         </button>
-    );
+    )
 }

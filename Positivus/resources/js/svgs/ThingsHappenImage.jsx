@@ -36,5 +36,5 @@ export default function ThingsHappenImage(params) {
             <ellipse cx="132" cy="173" rx="10" ry="20" fill="white" />
             <ellipse cx="173" cy="173" rx="10" ry="20" fill="white" />
         </svg>
-    );
+    )
 }

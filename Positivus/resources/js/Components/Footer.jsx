@@ -1,9 +1,9 @@
-import ContactInfo from "./ContactInfo";
-import Divider from "./Divider";
-import NavigationItems from "./NavItems";
-import NewsletterSubscription from "./NewsletterSubscription";
-import SocialIcons from "./SocialIcons";
-import WhiteLogo from "./WhiteLogo";
+import ContactInfo from './ContactInfo'
+import Divider from './Divider'
+import NavigationItems from './NavItems'
+import NewsletterSubscription from './NewsletterSubscription'
+import SocialIcons from './SocialIcons'
+import WhiteLogo from './WhiteLogo'
 
 export default function Footer() {
     return (
@@ -19,10 +19,10 @@ export default function Footer() {
                 <NewsletterSubscription />
             </div>
             {/* Passes in background Colour */}
-            <Divider backgroundColor={"bg-white"} />
+            <Divider backgroundColor={'bg-white'} />
             <div className="flex items-start">
                 <span>&copy;2023 Positivus. All Rights Reserved.</span>
             </div>
         </div>
-    );
+    )
 }
