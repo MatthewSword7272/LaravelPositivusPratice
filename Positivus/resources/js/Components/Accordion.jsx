@@ -20,13 +20,13 @@ export default function Accordion({number, title, content}) {
                 </div>
                 <div className="">
                     <button>
-                        {!isOpen ? <MinusImage className="h-5 w-5" /> : <PlusImage className="h-5 w-5" />}
                         {/*Switches image if accordion is opened or closed*/}
+                        {isOpen ? <MinusImage className="h-5 w-5" /> : <PlusImage className="h-5 w-5" />}
                     </button>
                 </div>
             </div>
 
-            <div className={`transition-all duration-700 ${isOpen ? 'max-h-96 block' : 'max-h-0 hidden'}`}>
+            <div className={`transition-all duration-700 overflow-y-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
                 <Divider backgroundColor={'bg-black'} />
                 {/* Line */}
                 <div className="text-p font-normal">{content}</div>

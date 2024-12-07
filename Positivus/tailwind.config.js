@@ -63,7 +63,39 @@ export default {
             },
             height: {
                 '75': '19.375rem'
-            }
+            },
+            keyframes: {
+                slide1: {
+                    '0%': {
+                        transform: 'translateX(2rem)',
+                    },
+
+                    '40%, 50%': {
+                        transform: 'translateX(calc(-10rem))',
+                    },
+
+                    '90%, 100%': {
+                        transform: 'translateX(2rem)',
+                    },
+                },
+                slide2: {
+                    '0%': {
+                        transform: 'translateX(-2rem)',
+                    },
+
+                    '40%, 50%': {
+                        transform: 'translateX(calc(10rem))',
+                    },
+
+                    '90%, 100%': {
+                        transform: 'translateX(-2rem)',
+                    },
+                },
+            },
+            animation: {
+                slide1: 'slide1 15s linear infinite',
+                slide2: 'slide2 15s linear infinite',
+            },
         },
     },
 
