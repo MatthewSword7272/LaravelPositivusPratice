@@ -1,6 +1,7 @@
 import Button from "./components/Button";
 import Header from "./components/Header";
 import Link from "./components/Link";
+import SponsorCarousel from "./components/SponsorMarquee";
 
 function App() {
   return (
@@ -25,34 +26,7 @@ function App() {
           <img src="/HeroImage.png" alt="" />
         </div>
       </section>
-      <section
-        className={
-          "flex justify-between grayscale overflow-hidden max-lg:hidden"
-        }
-      >
-        <img src="/amazon.png" alt="" />
-        <img src="/dribbble.png" alt="" />
-        <img src="/hubspot.png" alt="" />
-        <img src="/notion.png" alt="" />
-        <img src="/netflix.png" alt="" />
-        <img src="/zoom.png" alt="" />
-      </section>
-      <section
-        className={
-          "flex flex-col justify-between grayscale overflow-hidden lg:hidden"
-        }
-      >
-        <div className={"flex gap-10 justify-end "}>
-          <img src="/amazon.png" alt="" />
-          <img src="/dribbble.png" alt="" />
-          <img src="/hubspot.png" alt="" />
-        </div>
-        <div className={"flex gap-10"}>
-          <img src="/notion.png" alt="" />
-          <img src="/netflix.png" alt="" />
-          <img src="/zoom.png" alt="" />
-        </div>
-      </section>
+      <SponsorCarousel />
     </main>
   );
 }
