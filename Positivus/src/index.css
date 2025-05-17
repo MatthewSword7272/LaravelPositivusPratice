@@ -33,6 +33,6 @@ h4 {
   @apply lg:text-xl text-lg;
 }
 
-h5 {
+p {
   @apply lg:text-lg text-base;
 }

@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={"flex justify-between items-center my-[60px] gap-10"}>
+      <header className={"flex justify-between items-center my-[60px]"}>
         <img src={BlackLogo} alt="" />
         <div>
           <HiBars3
@@ -19,7 +19,7 @@ const Header = () => {
           />
         </div>
         <nav
-          className={`max-lg:hidden whitespace-nowrap lg:text-xl flex items-center lg:gap-10 gap-2`}
+          className={`max-lg:hidden whitespace-nowrap text-xl flex items-center xl:gap-10 gap-4`}
         >
           <a>About us</a>
           <a>Services</a>

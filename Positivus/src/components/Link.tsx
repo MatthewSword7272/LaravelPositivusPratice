@@ -5,7 +5,7 @@ import Black from "../assets/link/black.svg";
 import Black2 from "../assets/link/black_2.svg";
 import White from "../assets/link/white.svg";
 import White2 from "../assets/link/white_2.svg";
-import Green from "../assets/link/black.svg";
+import Green from "../assets/link/green.svg";
 import Green2 from "../assets/link/green_2.svg";
 
 interface LinkProps {
@@ -52,7 +52,7 @@ const Link = ({ style, children }: LinkProps) => {
       }`}
     >
       <img src={svg} alt="" />
-      {children}
+      <span className={style === 'white' || style === 'white_2' ? 'text-white' : 'text-black'}>{children}</span>
     </a>
   );
 };
