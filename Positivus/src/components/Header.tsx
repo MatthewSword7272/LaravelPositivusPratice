@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={"flex justify-between items-center my-[60px]"}>
+      <header className={"flex justify-between items-center my-[30px]"}>
         <img src={BlackLogo} alt="" />
         <div>
           <HiBars3

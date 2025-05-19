@@ -4,6 +4,9 @@
   --color-green: #b9ff66;
   --color-grey: #f3f3f3;
   --color-dark: #191a23;
+  --shadow-box: 0px 5px 0px 0px #000000;
+
+  --drop-shadow-svg: 5px 5px 0px #000;
 }
 
 :root {
@@ -18,7 +21,7 @@ a {
 }
 
 h1 {
-  @apply lg:text-6xl xl:leading-[1.5] text-[43px];
+  @apply font-semibold lg:text-6xl xl:leading-[1.5] text-[43px];
 }
 
 h2 {
@@ -26,13 +29,21 @@ h2 {
 }
 
 h3 {
-  @apply lg:text-3xl text-[26px];
+  @apply font-semibold lg:text-3xl text-2xl;
 }
 
 h4 {
-  @apply lg:text-xl text-lg;
+  @apply font-medium lg:text-xl text-lg;
 }
 
 p {
   @apply lg:text-lg text-base;
+}
+
+.slick-dots li.slick-active button:before {
+  @apply !text-green !opacity-100;
+}
+
+.slick-dots li button:before {
+  @apply !text-white !opacity-100;
 }

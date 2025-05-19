@@ -2,12 +2,12 @@ import Marquee from "react-fast-marquee";
 
 export default function SponsorCarousel() {
   const sponsorLogos = [
-    "/amazon.png",
-    "/dribbble.png",
-    "/hubspot.png",
-    "/notion.png",
-    "/netflix.png",
-    "/zoom.png",
+    "/logos/amazon.png",
+    "/logos/dribbble.png",
+    "/logos/hubspot.png",
+    "/logos/notion.png",
+    "/logos/netflix.png",
+    "/logos/zoom.png",
   ];
 
   return (

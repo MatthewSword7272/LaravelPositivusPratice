@@ -7,9 +7,10 @@ import White from "../assets/link/white.svg";
 import White2 from "../assets/link/white_2.svg";
 import Green from "../assets/link/green.svg";
 import Green2 from "../assets/link/green_2.svg";
+import type { ReactNode } from "react";
 
 interface LinkProps {
-  children: string;
+  children: ReactNode;
   style:
     | "simple_black"
     | "simple_white"
@@ -23,7 +24,7 @@ interface LinkProps {
 }
 
 const Link = ({ style, children }: LinkProps) => {
-  let svg: any;
+  let svg: string = SimpleBlack;
 
   if (style === "simple_black") {
     svg = SimpleBlack;
@@ -52,7 +53,17 @@ const Link = ({ style, children }: LinkProps) => {
       }`}
     >
       <img src={svg} alt="" />
-      <span className={style === 'white' || style === 'white_2' ? 'text-white' : 'text-black'}>{children}</span>
+      <span
+        className={
+          style === "white" || style === "white_2"
+            ? "text-white"
+            : style === "simple_green"
+            ? "text-green"
+            : "text-black"
+        }
+      >
+        {children}
+      </span>
     </a>
   );
 };
