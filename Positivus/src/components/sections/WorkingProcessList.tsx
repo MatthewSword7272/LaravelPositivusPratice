@@ -1,6 +1,5 @@
-import React from "react";
-import Heading from "./Heading";
-import Process from "./Process";
+import Heading from "../Heading";
+import Process from "../Process";
 
 const WorkingProcessList = () => {
   const process = [

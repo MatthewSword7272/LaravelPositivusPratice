@@ -1,5 +1,5 @@
-import Heading from "./Heading";
-import Link from "./Link";
+import Heading from "../Heading";
+import Link from "../Link";
 
 const services = [
   {

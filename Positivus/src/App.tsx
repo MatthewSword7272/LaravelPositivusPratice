@@ -1,15 +1,16 @@
-import CaseStudies from "./components/CaseStudies";
+import CaseStudies from "./components/sections/CaseStudies";
 import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import MakeThingsHappen from "./components/MakeThingsHappen";
-import Services from "./components/Services";
+import HeroSection from "./components/sections/HeroSection";
+import MakeThingsHappen from "./components/sections/MakeThingsHappen";
+import Services from "./components/sections/Services";
 import SponsorCarousel from "./components/SponsorMarquee";
+import WorkingProcessList from "./components/sections/WorkingProcessList";
+import TheTeam from "./components/sections/TheTeam";
+import Testimonials from "./components/sections/Testimonials";
+import ContactUs from "./components/sections/ContactUs";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import WorkingProcessList from "./components/WorkingProcessList";
-import TheTeam from "./components/TheTeam";
-import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
       <TheTeam />
 
       <Testimonials />
+
+      <ContactUs />
     </main>
   );
 }

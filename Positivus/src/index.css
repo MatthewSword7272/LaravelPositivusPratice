@@ -36,8 +36,19 @@ h4 {
   @apply font-medium lg:text-xl text-lg;
 }
 
-p {
+p,
+label {
   @apply lg:text-lg text-base;
+}
+
+input[type="radio"] {
+  @apply size-7 appearance-none border border-black rounded-full checked:bg-green;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  @apply rounded-2xl p-5 border border-black bg-white;
 }
 
 .slick-dots li.slick-active button:before {

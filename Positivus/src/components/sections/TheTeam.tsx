@@ -1,6 +1,6 @@
-import Heading from "./Heading";
-import TeamMember from "./TeamMember";
-import Button from "./Button";
+import Button from "../Button";
+import Heading from "../Heading";
+import TeamMember from "../TeamMember";
 
 const teamMembers = [
   {

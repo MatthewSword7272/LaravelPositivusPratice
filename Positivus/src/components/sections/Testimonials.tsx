@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import Heading from "./Heading";
+import Heading from "../Heading";
 import { FiArrowLeft } from "react-icons/fi";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -13,7 +13,7 @@ const Testimonials = () => {
 
   const testimonialsArray = Array(3).fill(testimonialsData);
 
-  function NextArrow(props) {
+  function NextArrow(props: any) {
     const { onClick } = props;
     return (
       <div
@@ -24,7 +24,7 @@ const Testimonials = () => {
       </div>
     );
   }
-  function PrevArrow(props) {
+  function PrevArrow(props: any) {
     const { onClick } = props;
     return (
       <div

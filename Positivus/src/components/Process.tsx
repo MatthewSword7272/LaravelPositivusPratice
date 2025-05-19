@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Minus from "../assets/minus";
 import Plus from "../assets/plus";
 
