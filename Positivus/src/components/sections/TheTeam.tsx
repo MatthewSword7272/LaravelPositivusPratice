@@ -64,8 +64,8 @@ const TheTeam = () => {
           />
         ))}
       </div>
-      <div className={"flex justify-end"}>
-        <Button className={"w-64"} style={"dark"}>
+      <div className={"flex lg:justify-end"}>
+        <Button className={"lg:w-64 w-full"} style={"dark"}>
           See all team
         </Button>
       </div>

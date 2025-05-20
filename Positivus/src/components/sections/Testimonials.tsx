@@ -11,12 +11,12 @@ const Testimonials = () => {
     role: "Marketing Director at XYZ Corp",
   };
 
-  const testimonialsArray = Array(3).fill(testimonialsData);
+  const testimonialsArray = Array(5).fill(testimonialsData);
 
   function NextArrow(props: unknown) {
     const { onClick } = props;
     return (
-      <div onClick={onClick} className={"absolute right-1/4 -bottom-5 z-30 cursor-pointer"}>
+      <div onClick={onClick} className={"absolute lg:right-1/4 right-14 -bottom-5 z-30 cursor-pointer"}>
         <FiArrowRight className={"text-white size-6"}></FiArrowRight>
       </div>
     );
@@ -24,7 +24,7 @@ const Testimonials = () => {
   function PrevArrow(props: unknown) {
     const { onClick } = props;
     return (
-      <div onClick={onClick} className={"absolute left-1/4 -bottom-5 z-30 cursor-pointer"}>
+      <div onClick={onClick} className={"absolute lg:left-1/4 left-14 -bottom-5 z-30 cursor-pointer"}>
         <FiArrowLeft className={"text-white size-6"}></FiArrowLeft>
       </div>
     );
@@ -37,6 +37,15 @@ const Testimonials = () => {
     prevArrow: <PrevArrow />,
     centerPadding: "230px",
     centerMode: true,
+
+    customPaging: () => (
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M7.0099 2.05941L14 0L11.9604 7.0099L14 14L7.0099 11.9604L0 14L2.05941 7.0099L0 0L7.0099 2.05941Z"
+          fill="white"
+        />
+      </svg>
+    ),
 
     responsive: [
       {

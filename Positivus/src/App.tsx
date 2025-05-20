@@ -16,7 +16,7 @@ import Footer from "./components/sections/Footer";
 function App() {
   return (
     <>
-      <main className={"container mx-auto px-10 space-y-16"}>
+      <main className={"container mx-auto lg:px-10 px-5 space-y-16"}>
         <Header></Header>
         <HeroSection />
         <SponsorCarousel />

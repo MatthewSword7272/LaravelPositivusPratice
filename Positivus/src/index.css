@@ -59,10 +59,14 @@ textarea {
   @apply rounded-2xl p-5 border border-black bg-white;
 }
 
-.slick-dots li.slick-active button:before {
-  @apply !text-green !opacity-100;
+.slick-dots li svg path {
+  fill: white;
 }
 
-.slick-dots li button:before {
-  @apply !text-white !opacity-100;
+.slick-dots li.slick-active svg path {
+  @apply fill-green;
+}
+
+.caseStudies .slick-list .slick-track div div {
+  /* @apply mr-5; */
 }

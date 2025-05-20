@@ -14,7 +14,7 @@ const Process = ({ id, heading, description }: ProcessProps) => {
     <>
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className={`space-y-5 cursor-pointer px-[60px] py-10 rounded-4xl border shadow-box ${
+        className={`space-y-5 cursor-pointer lg:px-[60px] lg:py-10 p-8 lg:rounded-4xl rounded-[5rem] border shadow-box ${
           isOpen ? "bg-green" : "bg-grey"
         }`}
       >
