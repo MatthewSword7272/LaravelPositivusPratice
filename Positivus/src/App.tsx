@@ -11,28 +11,32 @@ import ContactUs from "./components/sections/ContactUs";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Footer from "./components/sections/Footer";
 
 function App() {
   return (
-    <main className={"container mx-auto px-10 space-y-16"}>
-      <Header></Header>
-      <HeroSection />
-      <SponsorCarousel />
+    <>
+      <main className={"container mx-auto px-10 space-y-16"}>
+        <Header></Header>
+        <HeroSection />
+        <SponsorCarousel />
 
-      <Services />
+        <Services />
 
-      <MakeThingsHappen />
+        <MakeThingsHappen />
 
-      <CaseStudies />
+        <CaseStudies />
 
-      <WorkingProcessList />
+        <WorkingProcessList />
 
-      <TheTeam />
+        <TheTeam />
 
-      <Testimonials />
+        <Testimonials />
 
-      <ContactUs />
-    </main>
+        <ContactUs />
+      </main>
+      <Footer />
+    </>
   );
 }
 

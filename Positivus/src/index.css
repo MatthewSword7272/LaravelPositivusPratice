@@ -42,7 +42,15 @@ label {
 }
 
 input[type="radio"] {
-  @apply size-7 appearance-none border border-black rounded-full checked:bg-green;
+  @apply size-7 appearance-none border border-black rounded-full m-0 cursor-pointer;
+
+  &::after {
+    @apply content-[''] block size-[18px] rounded-full m-1;
+  }
+
+  &:checked::after {
+    @apply bg-green;
+  }
 }
 
 input[type="text"],

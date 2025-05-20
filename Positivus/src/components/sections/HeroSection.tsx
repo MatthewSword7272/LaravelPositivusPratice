@@ -9,9 +9,8 @@ const HeroSection = () => {
           <img src="/HeroImage.png" alt="" />
         </div>
         <p>
-          Our digital marketing agency helps businesses grow and succeed online
-          through a range of services including SEO, PPC, social media
-          marketing, and content creation.
+          Our digital marketing agency helps businesses grow and succeed online through a range of services including
+          SEO, PPC, social media marketing, and content creation.
         </p>
         <Button style={"dark"}>Book a consultation</Button>
       </div>

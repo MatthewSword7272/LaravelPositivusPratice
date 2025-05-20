@@ -49,12 +49,7 @@ const WorkingProcessList = () => {
       />
       <div className={"space-y-7"}>
         {process.map((step) => (
-          <Process
-            key={step.id}
-            id={step.id}
-            heading={step.heading}
-            description={step.description}
-          />
+          <Process key={step.id} id={step.id} heading={step.heading} description={step.description} />
         ))}
       </div>
     </>

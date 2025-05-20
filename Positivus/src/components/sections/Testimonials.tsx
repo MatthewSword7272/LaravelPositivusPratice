@@ -13,24 +13,18 @@ const Testimonials = () => {
 
   const testimonialsArray = Array(3).fill(testimonialsData);
 
-  function NextArrow(props: any) {
+  function NextArrow(props: unknown) {
     const { onClick } = props;
     return (
-      <div
-        onClick={onClick}
-        className={"absolute right-1/4 -bottom-5 z-30 cursor-pointer"}
-      >
+      <div onClick={onClick} className={"absolute right-1/4 -bottom-5 z-30 cursor-pointer"}>
         <FiArrowRight className={"text-white size-6"}></FiArrowRight>
       </div>
     );
   }
-  function PrevArrow(props: any) {
+  function PrevArrow(props: unknown) {
     const { onClick } = props;
     return (
-      <div
-        onClick={onClick}
-        className={"absolute left-1/4 -bottom-5 z-30 cursor-pointer"}
-      >
+      <div onClick={onClick} className={"absolute left-1/4 -bottom-5 z-30 cursor-pointer"}>
         <FiArrowLeft className={"text-white size-6"}></FiArrowLeft>
       </div>
     );
@@ -73,13 +67,7 @@ const Testimonials = () => {
         <Slider {...settings}>
           {testimonialsArray.map((test, index) => (
             <div key={index} className={"px-7 lg:mb-32 mb-16"}>
-              <p
-                className={
-                  "mb-5 border-green border rounded-[3rem] text-white p-12"
-                }
-              >
-                {test.quote}
-              </p>
+              <p className={"mb-5 border-green border rounded-[3rem] text-white p-12"}>{test.quote}</p>
               {/* <svg
                 className={"size-10 bottom-17 left-20 absolute z-30"}
                 viewBox="0 0 100 100"
