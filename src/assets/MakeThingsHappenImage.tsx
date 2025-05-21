@@ -16,7 +16,7 @@ const MakeThingsHappenImage = () => {
       // Create a common ScrollTrigger configuration that triggers when the component is in view
       const scrollTriggerConfig = {
         trigger: containerRef.current,
-        start: "top 90%", // Start animation when the top of the element is 80% from the top of the viewport
+        start: "top 70%", // Start animation when the top of the element is 80% from the top of the viewport
         toggleActions: "play none none", // Play when entering, reset when leaving
       };
 
@@ -134,9 +134,32 @@ const MakeThingsHappenImage = () => {
         fill="#B9FF66"
         id="pathShape2"
       />
-      <circle cx="152.5" cy="186.5" r="62" fill="black" stroke="black" strokeWidth="1" />
-      <ellipse cx="132" cy="173" rx="10" ry="20" fill="white" stroke="black" strokeWidth="1" />
-      <ellipse cx="173" cy="173" rx="10" ry="20" fill="white" stroke="black" strokeWidth="1" />
+      <circle
+        cx="152.5"
+        cy="186.5"
+        r="62"
+        fill="black"
+        stroke="black"
+        strokeWidth="1"
+      />
+      <ellipse
+        cx="132"
+        cy="173"
+        rx="10"
+        ry="20"
+        fill="white"
+        stroke="black"
+        strokeWidth="1"
+      />
+      <ellipse
+        cx="173"
+        cy="173"
+        rx="10"
+        ry="20"
+        fill="white"
+        stroke="black"
+        strokeWidth="1"
+      />
     </svg>
   );
 };

@@ -10,7 +10,12 @@ interface HeadingProps {
   backgroundColor?: "bg-green" | "bg-dark" | "bg-white";
 }
 
-const Heading = ({ heading, description, backgroundColor = "bg-green", className = "" }: HeadingProps) => {
+const Heading = ({
+  heading,
+  description,
+  backgroundColor = "bg-green",
+  className = "",
+}: HeadingProps) => {
   gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
   const h2 = useRef<HTMLHeadingElement | null>(null);
@@ -28,8 +33,8 @@ const Heading = ({ heading, description, backgroundColor = "bg-green", className
 
     gsap.from(split.words, {
       scrollTrigger: p.current,
-      x: 100, // animate from 100px below
-      autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
+      x: 100,
+      autoAlpha: 0,
       duration: 1.5,
       ease: "power4",
       delay: 0.5,
@@ -39,7 +44,10 @@ const Heading = ({ heading, description, backgroundColor = "bg-green", className
 
   return (
     <div className="flex max-lg:flex-col gap-x-10 gap-y-7 items-center mb-10">
-      <h2 ref={h2} className={`${backgroundColor} font-medium rounded-lg px-3 py-1 ${className}`}>
+      <h2
+        ref={h2}
+        className={`${backgroundColor} font-medium rounded-lg px-3 py-1 ${className}`}
+      >
         {heading}
       </h2>
       {description && (

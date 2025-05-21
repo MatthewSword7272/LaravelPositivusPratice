@@ -6,7 +6,8 @@ const teamMembers = [
   {
     name: "John Smith",
     role: "CEO and Founder",
-    description: "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+    description:
+      "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
     profileImage: `./team/john_smith.png`,
   },
   {
@@ -50,13 +51,16 @@ const TheTeam = () => {
   return (
     <>
       <Heading
-        description={"Meet the skilled and experienced team behind our successful digital marketing strategies"}
+        description={
+          "Meet the skilled and experienced team behind our successful digital marketing strategies"
+        }
         heading={"Team"}
       />
       <div className={"grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10"}>
         {teamMembers.map((member, index) => (
           <TeamMember
             key={index}
+            delay={index}
             role={member.role}
             name={member.name}
             description={member.description}
