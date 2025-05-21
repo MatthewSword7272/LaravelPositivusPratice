@@ -1,3 +1,6 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 
 export default function SponsorCarousel() {
@@ -10,18 +13,31 @@ export default function SponsorCarousel() {
     "/logos/zoom.png",
   ];
 
+  const item = useRef<HTMLImageElement | null>(null);
+
+  gsap.registerPlugin(useGSAP);
+
+  useGSAP(() => {
+    gsap.from(".grayscale", {
+      scale: 0,
+      duration: 0.6,
+      stagger: 0.2,
+      rotate: -360,
+    });
+  });
+
   return (
     <>
       <div className="lg:flex justify-between w-full hidden">
         {sponsorLogos.map((image, index) => (
-          <img key={index} src={image} className="grayscale"></img>
+          <img ref={item} key={index} src={image} className="grayscale"></img>
         ))}
       </div>
 
       <div className={"lg:hidden"}>
         <Marquee speed={30}>
           {sponsorLogos.map((image, index) => (
-            <img key={index} src={image} className="grayscale mx-5"></img>
+            <img ref={item} key={index} src={image} className="grayscale mx-5"></img>
           ))}
         </Marquee>
       </div>

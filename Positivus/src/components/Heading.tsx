@@ -1,3 +1,7 @@
+import { useGSAP } from "@gsap/react";
+import SplitText from "gsap/SplitText";
+import gsap from "gsap";
+import { useRef } from "react";
 interface HeadingProps {
   heading: string;
   className?: string;
@@ -6,10 +10,40 @@ interface HeadingProps {
 }
 
 const Heading = ({ heading, description, backgroundColor = "bg-green", className = "" }: HeadingProps) => {
+  gsap.registerPlugin(useGSAP, SplitText);
+
+  const h2 = useRef<HTMLHeadingElement | null>(null);
+  const p = useRef<HTMLParagraphElement | null>(null);
+
+  useGSAP(() => {
+    const split = SplitText.create(p.current, { type: "words, chars" });
+
+    gsap.from(h2.current, {
+      rotation: "10rad",
+      x: "100vw",
+      duration: 1,
+    });
+
+    gsap.from(split.words, {
+      x: 100, // animate from 100px below
+      autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
+      duration: 1.5,
+      ease: "power4",
+      delay: 0.5,
+      stagger: 0.04,
+    });
+  });
+
   return (
     <div className="flex max-lg:flex-col gap-x-10 gap-y-7 items-center mb-10">
-      <h2 className={`${backgroundColor} font-medium rounded-lg px-3 py-1 ${className}`}>{heading}</h2>
-      {description && <p className="lg:w-1/2 max-lg:text-center">{description}</p>}
+      <h2 ref={h2} className={`${backgroundColor} font-medium rounded-lg px-3 py-1 ${className}`}>
+        {heading}
+      </h2>
+      {description && (
+        <p ref={p} className="lg:w-1/2 max-lg:text-center">
+          {description}
+        </p>
+      )}
     </div>
   );
 };

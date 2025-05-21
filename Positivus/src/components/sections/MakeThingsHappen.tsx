@@ -1,3 +1,4 @@
+import MakeThingsHappenImage from "../../assets/MakeThingsHappenImage";
 import Button from "../Button";
 
 const MakeThingsHappen = () => {
@@ -14,7 +15,7 @@ const MakeThingsHappen = () => {
         </Button>
       </div>
       <div className={"max-lg:hidden"}>
-        <img src="./make-things-happen.svg" alt="" />
+        <MakeThingsHappenImage />
       </div>
     </div>
   );
