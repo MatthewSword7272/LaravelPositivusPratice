@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 
@@ -15,10 +16,11 @@ export default function SponsorCarousel() {
 
   const item = useRef<HTMLImageElement | null>(null);
 
-  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
     gsap.from(".grayscale", {
+      scrollTrigger: ".grayscale",
       scale: 0,
       duration: 0.6,
       stagger: 0.2,

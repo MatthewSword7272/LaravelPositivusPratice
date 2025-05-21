@@ -1,88 +1,113 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 const MakeThingsHappenImage = () => {
-  gsap.registerPlugin(useGSAP, DrawSVGPlugin);
+  gsap.registerPlugin(useGSAP, DrawSVGPlugin, ScrollTrigger);
+  const containerRef = useRef(null);
 
   const tl1 = gsap.timeline();
   const tl2 = gsap.timeline();
 
-  useGSAP(() => {
-    gsap.from("path", {
-      drawSVG: 1,
-      duration: 1.5,
-    });
+  useGSAP(
+    () => {
+      // Create a common ScrollTrigger configuration that triggers when the component is in view
+      const scrollTriggerConfig = {
+        trigger: containerRef.current,
+        start: "top 90%", // Start animation when the top of the element is 80% from the top of the viewport
+        toggleActions: "play none none", // Play when entering, reset when leaving
+      };
 
-    tl1
-      .fromTo(
-        "circle",
-        {
-          drawSVG: "0%",
-          fillOpacity: 0,
-        },
-        {
-          fillOpacity: 0,
-          duration: 1.5,
-          drawSVG: "100%",
-          ease: "power1.inOut",
-        }
-      )
-      .fromTo(
-        "circle",
-        {
-          fillOpacity: 0,
-        },
-        {
-          fillOpacity: 1,
-          duration: 0.8,
-          ease: "power2.in",
-        }
-      );
+      gsap.from("path", {
+        scrollTrigger: scrollTriggerConfig,
+        drawSVG: 1,
+        duration: 1.5,
+      });
 
-    tl2
-      .fromTo(
-        "ellipse",
-        {
-          drawSVG: "0%",
-          fillOpacity: 0,
-        },
-        {
-          fillOpacity: 0,
-          duration: 1.5,
-          drawSVG: "100%",
-          ease: "power1.inOut",
-        }
-      )
-      .fromTo(
-        "ellipse",
-        {
-          fillOpacity: 0,
-        },
-        {
-          fillOpacity: 1,
-          duration: 0.8,
-          ease: "power2.in",
-        }
-      );
+      tl1
+        .fromTo(
+          "circle",
+          {
+            drawSVG: "0%",
+            fillOpacity: 0,
+          },
+          {
+            fillOpacity: 0,
+            duration: 1.5,
+            drawSVG: "100%",
+            ease: "power1.inOut",
+            scrollTrigger: scrollTriggerConfig,
+          }
+        )
+        .fromTo(
+          "circle",
+          {
+            fillOpacity: 0,
+          },
+          {
+            fillOpacity: 1,
+            duration: 0.8,
+            ease: "power2.in",
+          }
+        );
 
-    gsap.from("#pathShape1", {
-      y: -500,
-      duration: 2,
-      delay: 0.75,
-      ease: "bounce.out",
-    });
+      tl2
+        .fromTo(
+          "ellipse",
+          {
+            drawSVG: "0%",
+            fillOpacity: 0,
+          },
+          {
+            fillOpacity: 0,
+            duration: 1.5,
+            drawSVG: "100%",
+            ease: "power1.inOut",
+            scrollTrigger: scrollTriggerConfig,
+          }
+        )
+        .fromTo(
+          "ellipse",
+          {
+            fillOpacity: 0,
+          },
+          {
+            fillOpacity: 1,
+            duration: 0.8,
+            ease: "power2.in",
+          }
+        );
 
-    gsap.from("#pathShape2", {
-      y: -600,
-      duration: 2,
-      delay: 0.55,
-      ease: "bounce.out",
-    });
-  });
+      gsap.from("#pathShape1", {
+        y: -500,
+        duration: 2,
+        delay: 0.75,
+        ease: "bounce.out",
+        scrollTrigger: scrollTriggerConfig,
+      });
+
+      gsap.from("#pathShape2", {
+        y: -600,
+        duration: 2,
+        delay: 0.55,
+        ease: "bounce.out",
+        scrollTrigger: scrollTriggerConfig,
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <svg width="359" height="395" viewBox="0 0 359 395" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      ref={containerRef}
+      width="359"
+      height="395"
+      viewBox="0 0 359 395"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M169 163.5C215.644 163.5 257.858 167.471 288.398 173.887C303.673 177.095 316 180.91 324.497 185.13C328.746 187.24 332.011 189.439 334.208 191.694C336.403 193.948 337.5 196.222 337.5 198.5C337.5 200.778 336.403 203.052 334.208 205.306C332.011 207.561 328.746 209.76 324.497 211.87C316 216.09 303.673 219.905 288.398 223.113C257.858 229.529 215.644 233.5 169 233.5C122.356 233.5 80.1417 229.529 49.6016 223.113C34.3275 219.905 21.9997 216.09 13.5029 211.87C9.25392 209.76 5.98872 207.561 3.79199 205.306C1.59696 203.052 0.5 200.778 0.5 198.5C0.5 196.222 1.59696 193.948 3.79199 191.694C5.98872 189.439 9.25392 187.24 13.5029 185.13C21.9997 180.91 34.3275 177.095 49.6016 173.887C80.1417 167.471 122.356 163.5 169 163.5Z"
         stroke="black"

@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Link from "./Link";
 import { useRef } from "react";
 
@@ -13,7 +14,7 @@ interface ServiceProps {
 }
 
 const Service = ({ service, delay }: ServiceProps) => {
-  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   const container = useRef<HTMLDivElement | null>(null);
   const image = useRef<HTMLImageElement | null>(null);
@@ -24,23 +25,27 @@ const Service = ({ service, delay }: ServiceProps) => {
 
   useGSAP(() => {
     gsap.from(container.current, {
+      scrollTrigger: container.current,
       scale: 0,
       duration: 0.5,
       delay: delayIndex,
     });
     gsap.from(image.current, {
+      scrollTrigger: image.current,
       scale: 0,
       x: 1000,
       duration: 0.5,
       delay: delayIndex + 1,
     });
     gsap.from(link.current, {
+      scrollTrigger: link.current,
       scale: 0,
       y: 500,
       duration: 0.65,
       delay: delayIndex + 1,
     });
     gsap.from(heading.current, {
+      scrollTrigger: heading.current,
       duration: 0.65,
       rotationX: 45,
       scaleX: 0,
@@ -52,7 +57,7 @@ const Service = ({ service, delay }: ServiceProps) => {
   return (
     <div
       ref={container}
-      className={`serviceContainer flex justify-between items-center rounded-4xl p-12 lg:gap-10 border shadow-box min-h-80 ${
+      className={`serviceContainer  flex justify-between items-center rounded-4xl p-12 lg:gap-10 border shadow-box min-h-80 ${
         service.colorCode === 1 ? "bg-grey" : service.colorCode === 2 ? "bg-green" : "bg-black"
       }`}
     >
@@ -76,7 +81,7 @@ const Service = ({ service, delay }: ServiceProps) => {
           </Link>
         </div>
       </div>
-      <div className="lg:w-52 h-full lg:content-center content-end">
+      <div className="lg:w-52 h-full lg:content-center content-end overflow-hidden">
         <img ref={image} src={service.image} alt="" />
       </div>
     </div>

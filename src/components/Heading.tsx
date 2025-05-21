@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/SplitText";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useRef } from "react";
 interface HeadingProps {
@@ -10,7 +11,7 @@ interface HeadingProps {
 }
 
 const Heading = ({ heading, description, backgroundColor = "bg-green", className = "" }: HeadingProps) => {
-  gsap.registerPlugin(useGSAP, SplitText);
+  gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
   const h2 = useRef<HTMLHeadingElement | null>(null);
   const p = useRef<HTMLParagraphElement | null>(null);
@@ -19,12 +20,14 @@ const Heading = ({ heading, description, backgroundColor = "bg-green", className
     const split = SplitText.create(p.current, { type: "words, chars" });
 
     gsap.from(h2.current, {
+      scrollTrigger: h2.current,
       rotation: "10rad",
-      x: "100vw",
+      x: 1000,
       duration: 1,
     });
 
     gsap.from(split.words, {
+      scrollTrigger: p.current,
       x: 100, // animate from 100px below
       autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
       duration: 1.5,
