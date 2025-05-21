@@ -14,7 +14,7 @@ const Testimonials = () => {
   const testimonialsArray = Array(5).fill(testimonialsData);
 
   interface ArrowProps {
-    onClick: React.MouseEventHandler<HTMLDivElement>;
+    onClick?: React.MouseEventHandler<HTMLDivElement>;
   }
 
   function NextArrow(props: ArrowProps) {
