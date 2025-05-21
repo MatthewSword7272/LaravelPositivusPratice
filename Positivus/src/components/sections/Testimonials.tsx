@@ -13,7 +13,11 @@ const Testimonials = () => {
 
   const testimonialsArray = Array(5).fill(testimonialsData);
 
-  function NextArrow(props: unknown) {
+  interface ArrowProps {
+    onClick: React.MouseEventHandler<HTMLDivElement>;
+  }
+
+  function NextArrow(props: ArrowProps) {
     const { onClick } = props;
     return (
       <div onClick={onClick} className={"absolute lg:right-1/4 right-14 -bottom-5 z-30 cursor-pointer"}>
@@ -21,7 +25,7 @@ const Testimonials = () => {
       </div>
     );
   }
-  function PrevArrow(props: unknown) {
+  function PrevArrow(props: ArrowProps) {
     const { onClick } = props;
     return (
       <div onClick={onClick} className={"absolute lg:left-1/4 left-14 -bottom-5 z-30 cursor-pointer"}>
