@@ -40,7 +40,7 @@ const Heading = ({
       delay: 0.5,
       stagger: 0.04,
     });
-  });
+  }, []);
 
   return (
     <div className="flex max-lg:flex-col gap-x-10 gap-y-7 items-center mb-10">

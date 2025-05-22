@@ -72,7 +72,8 @@ const TeamMember = ({
       duration: 1.5,
       ease: "none",
     });
-  });
+  }, []);
+
   return (
     <div
       ref={container}

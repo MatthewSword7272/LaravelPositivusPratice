@@ -23,7 +23,7 @@ const Button = ({ children, style, className }: ButtonProps) => {
       scale: 0,
       ease: "elastic.out(1, 0.5)",
     });
-  });
+  }, []);
 
   let buttonClassName: string = `px-8 py-5 rounded-xl lg:text-xl border whitespace-nowrap transition-colors ${className} `;
 

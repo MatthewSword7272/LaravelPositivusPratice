@@ -8,96 +8,87 @@ const MakeThingsHappenImage = () => {
   gsap.registerPlugin(useGSAP, DrawSVGPlugin, ScrollTrigger);
   const containerRef = useRef(null);
 
-  const tl1 = gsap.timeline();
-  const tl2 = gsap.timeline();
+  useGSAP(() => {
+    const scrollTriggerConfig = {
+      trigger: containerRef.current,
+      start: "top 70%",
+      toggleActions: "play none none",
+    };
+    const tl1 = gsap.timeline({ scrollTrigger: scrollTriggerConfig });
+    const tl2 = gsap.timeline({ scrollTrigger: scrollTriggerConfig });
 
-  useGSAP(
-    () => {
-      // Create a common ScrollTrigger configuration that triggers when the component is in view
-      const scrollTriggerConfig = {
-        trigger: containerRef.current,
-        start: "top 70%", // Start animation when the top of the element is 80% from the top of the viewport
-        toggleActions: "play none none", // Play when entering, reset when leaving
-      };
+    gsap.from("path", {
+      scrollTrigger: scrollTriggerConfig,
+      drawSVG: 1,
+      duration: 1.5,
+    });
 
-      gsap.from("path", {
-        scrollTrigger: scrollTriggerConfig,
-        drawSVG: 1,
-        duration: 1.5,
-      });
+    tl1
+      .fromTo(
+        "circle",
+        {
+          drawSVG: "0%",
+          fillOpacity: 0,
+        },
+        {
+          duration: 1.5,
+          drawSVG: "100%",
+          ease: "power1.inOut",
+        }
+      )
+      .fromTo(
+        "circle",
+        {
+          fillOpacity: 0,
+        },
+        {
+          fillOpacity: 1,
+          duration: 0.8,
+          ease: "power2.in",
+        }
+      );
 
-      tl1
-        .fromTo(
-          "circle",
-          {
-            drawSVG: "0%",
-            fillOpacity: 0,
-          },
-          {
-            fillOpacity: 0,
-            duration: 1.5,
-            drawSVG: "100%",
-            ease: "power1.inOut",
-            scrollTrigger: scrollTriggerConfig,
-          }
-        )
-        .fromTo(
-          "circle",
-          {
-            fillOpacity: 0,
-          },
-          {
-            fillOpacity: 1,
-            duration: 0.8,
-            ease: "power2.in",
-          }
-        );
+    tl2
+      .fromTo(
+        "ellipse",
+        {
+          drawSVG: "0%",
+          fillOpacity: 0,
+        },
+        {
+          duration: 1.5,
+          drawSVG: "100%",
+          ease: "power1.inOut",
+        }
+      )
+      .fromTo(
+        "ellipse",
+        {
+          fillOpacity: 0,
+        },
+        {
+          fillOpacity: 1,
+          duration: 0.8,
+          ease: "power2.in",
+        }
+      );
 
-      tl2
-        .fromTo(
-          "ellipse",
-          {
-            drawSVG: "0%",
-            fillOpacity: 0,
-          },
-          {
-            fillOpacity: 0,
-            duration: 1.5,
-            drawSVG: "100%",
-            ease: "power1.inOut",
-            scrollTrigger: scrollTriggerConfig,
-          }
-        )
-        .fromTo(
-          "ellipse",
-          {
-            fillOpacity: 0,
-          },
-          {
-            fillOpacity: 1,
-            duration: 0.8,
-            ease: "power2.in",
-          }
-        );
+    gsap.from("#pathShape1", {
+      y: -500,
+      duration: 2,
+      delay: 0.75,
+      ease: "bounce.out",
+      scrollTrigger: scrollTriggerConfig,
+    });
 
-      gsap.from("#pathShape1", {
-        y: -500,
-        duration: 2,
-        delay: 0.75,
-        ease: "bounce.out",
-        scrollTrigger: scrollTriggerConfig,
-      });
-
-      gsap.from("#pathShape2", {
-        y: -600,
-        duration: 2,
-        delay: 0.55,
-        ease: "bounce.out",
-        scrollTrigger: scrollTriggerConfig,
-      });
-    },
-    { scope: containerRef }
-  );
+    gsap.from("#pathShape2", {
+      y: -600,
+      duration: 2,
+      delay: 0.55,
+      ease: "bounce.out",
+      scrollTrigger: scrollTriggerConfig,
+    });
+  }, []);
 
   return (
     <svg
@@ -134,32 +125,9 @@ const MakeThingsHappenImage = () => {
         fill="#B9FF66"
         id="pathShape2"
       />
-      <circle
-        cx="152.5"
-        cy="186.5"
-        r="62"
-        fill="black"
-        stroke="black"
-        strokeWidth="1"
-      />
-      <ellipse
-        cx="132"
-        cy="173"
-        rx="10"
-        ry="20"
-        fill="white"
-        stroke="black"
-        strokeWidth="1"
-      />
-      <ellipse
-        cx="173"
-        cy="173"
-        rx="10"
-        ry="20"
-        fill="white"
-        stroke="black"
-        strokeWidth="1"
-      />
+      <circle cx="152.5" cy="186.5" r="62" fill="black" stroke="black" />
+      <ellipse cx="132" cy="173" rx="10" ry="20" fill="white" stroke="black" />
+      <ellipse cx="173" cy="173" rx="10" ry="20" fill="white" stroke="black" />
     </svg>
   );
 };

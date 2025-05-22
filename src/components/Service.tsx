@@ -52,13 +52,17 @@ const Service = ({ service, delay }: ServiceProps) => {
       z: -300,
       delay: delayIndex + 1,
     });
-  });
+  }, []);
 
   return (
     <div
       ref={container}
       className={`serviceContainer  flex justify-between items-center rounded-4xl p-12 lg:gap-10 border shadow-box min-h-80 ${
-        service.colorCode === 1 ? "bg-grey" : service.colorCode === 2 ? "bg-green" : "bg-black"
+        service.colorCode === 1
+          ? "bg-grey"
+          : service.colorCode === 2
+          ? "bg-green"
+          : "bg-black"
       }`}
     >
       <div className="flex flex-col w-1/2 h-full justify-between">
@@ -67,7 +71,9 @@ const Service = ({ service, delay }: ServiceProps) => {
             <span
               key={index}
               className={`px-1 w-fit rounded ${
-                service.colorCode === 1 || service.colorCode === 4 ? "bg-green" : "bg-white"
+                service.colorCode === 1 || service.colorCode === 4
+                  ? "bg-green"
+                  : "bg-white"
               }`}
             >
               {text}
@@ -76,7 +82,13 @@ const Service = ({ service, delay }: ServiceProps) => {
         </h3>
 
         <div ref={link}>
-          <Link style={service.colorCode === 1 || service.colorCode === 2 ? "black" : "white_2"}>
+          <Link
+            style={
+              service.colorCode === 1 || service.colorCode === 2
+                ? "black"
+                : "white_2"
+            }
+          >
             <span className={`max-lg:hidden`}>Learn More</span>
           </Link>
         </div>

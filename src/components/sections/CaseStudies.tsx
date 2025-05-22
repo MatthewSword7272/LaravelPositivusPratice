@@ -24,10 +24,21 @@ const CaseStudies = () => {
         heading="Case Studies"
         description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
       />
-      <div className={"hidden lg:flex gap-16 bg-dark rounded-4xl h-80 px-[60px] py-[70px]"}>
+      <div
+        className={
+          "hidden lg:flex gap-16 bg-dark rounded-4xl h-80 px-[60px] py-[70px]"
+        }
+      >
         {caseStudies.map((text, index) => (
-          <div key={index} className={"not-last:pr-16 not-last:border-r border-white"}>
-            <p className={"text-white xl:leading-6 lg:leading-[18px]"}>{text}</p>
+          <div
+            key={index}
+            className={
+              "not-last:pr-16 not-last:border-r border-white flex flex-col justify-between"
+            }
+          >
+            <p className={"text-white xl:leading-6 lg:leading-[18px]"}>
+              {text}
+            </p>
             <Link style={"simple_green"}>Learn more</Link>
           </div>
         ))}

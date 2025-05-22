@@ -32,7 +32,7 @@ const HeroSection = () => {
       duration: 2,
       ease: "power3.out",
     });
-  });
+  }, []);
 
   return (
     <section className={"flex max-md:flex-col items-center justify-between"}>

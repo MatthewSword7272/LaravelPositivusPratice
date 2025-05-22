@@ -26,7 +26,7 @@ export default function SponsorCarousel() {
       stagger: 0.2,
       rotate: -360,
     });
-  });
+  }, []);
 
   return (
     <>
@@ -39,7 +39,12 @@ export default function SponsorCarousel() {
       <div className={"lg:hidden"}>
         <Marquee speed={30}>
           {sponsorLogos.map((image, index) => (
-            <img ref={item} key={index} src={image} className="grayscale mx-5"></img>
+            <img
+              ref={item}
+              key={index}
+              src={image}
+              className="grayscale mx-5"
+            ></img>
           ))}
         </Marquee>
       </div>
