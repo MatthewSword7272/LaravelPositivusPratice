@@ -11,7 +11,7 @@ interface ProfileImageProps {
 
 const ProfileImage = ({ image, delay }: ProfileImageProps) => {
   const img = useRef<HTMLImageElement | null>(null);
-  const profilePath = useRef(null);
+  // const profilePath = useRef(null);
 
   gsap.registerPlugin(useGSAP, ScrollTrigger, DrawSVGPlugin);
 
