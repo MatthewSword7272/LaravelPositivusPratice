@@ -26,7 +26,9 @@ function App() {
           Figma
         </a>
       </div>
-      <main className={"container mx-auto lg:px-10 px-5 space-y-16"}>
+      <main
+        className={"container mx-auto lg:px-10 px-5 space-y-16 overflow-clip"}
+      >
         <Header></Header>
         <HeroSection />
         <SponsorCarousel />

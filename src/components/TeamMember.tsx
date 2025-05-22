@@ -26,6 +26,8 @@ const TeamMember = ({
   const container = useRef<HTMLDivElement | null>(null);
   const line = useRef<HTMLHRElement | null>(null);
   const descriptionRef = useRef<HTMLParagraphElement | null>(null);
+  const text = useRef<HTMLDivElement | null>(null);
+  const icon = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const split = SplitText.create(descriptionRef.current, {
@@ -55,13 +57,31 @@ const TeamMember = ({
       ease: "power4",
       stagger: 0.04,
     });
+
+    gsap.from(text.current, {
+      scrollTrigger: text.current,
+      x: 300,
+      duration: 2,
+      delay: 0.75,
+      ease: "elastic.out",
+    });
+    gsap.from(icon.current, {
+      scrollTrigger: text.current,
+      x: -900,
+      y: 600,
+      duration: 1.5,
+      ease: "none",
+    });
   });
   return (
     <div
       ref={container}
-      className={"shadow-box rounded-4xl border py-10 px-9 relative space-y-5"}
+      className={
+        "shadow-box rounded-4xl border py-10 px-9 relative space-y-5 overflow-hidden"
+      }
     >
       <div
+        ref={icon}
         className={
           "absolute flex items-center justify-center top-5 right-5 size-8 bg-black rounded-full"
         }
@@ -70,7 +90,7 @@ const TeamMember = ({
       </div>
       <div className={"flex items-end gap-5"}>
         <ProfileImage image={image} delay={delay / 4 + 1} />
-        <div>
+        <div ref={text}>
           <h4>{name}</h4>
           <p>{role}</p>
         </div>

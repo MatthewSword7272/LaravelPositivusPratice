@@ -12,17 +12,17 @@ const HeroSection = () => {
 
   useGSAP(() => {
     gsap.from(h1.current, {
-      x: -1000,
+      x: "-200%",
       delay: 0.5,
       duration: 1,
     });
     gsap.from(p.current, {
-      x: -1000,
+      x: "-200%",
       delay: 0.7,
       duration: 1,
     });
     gsap.from(".button", {
-      x: -1000,
+      x: "-200%",
       delay: 1,
       duration: 1,
     });
@@ -42,8 +42,9 @@ const HeroSection = () => {
           <img className="image" ref={img} src="/HeroImage.png" alt="" />
         </div>
         <p ref={p}>
-          Our digital marketing agency helps businesses grow and succeed online through a range of services including
-          SEO, PPC, social media marketing, and content creation.
+          Our digital marketing agency helps businesses grow and succeed online
+          through a range of services including SEO, PPC, social media
+          marketing, and content creation.
         </p>
         <div className={"button"}>
           <Button className="max-lg:w-full" style={"dark"}>

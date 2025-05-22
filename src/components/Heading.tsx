@@ -27,7 +27,7 @@ const Heading = ({
     gsap.from(h2.current, {
       scrollTrigger: h2.current,
       rotation: "10rad",
-      x: 1000,
+      x: "500%",
       duration: 1,
     });
 
